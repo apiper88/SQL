@@ -25,3 +25,23 @@ VALUES
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
+--Order items by price
+Select (item_name),
+(Price)
+FROM (superstore)
+ORDER BY (Price);
+--Show Average price
+Select AVG (price)
+FROM (superstore);
+--Show average price by category
+Select AVG (price), category
+FROM (superstore)
+GROUP BY (category);
+--Show the Average Price of Kitchen Supplies
+Select AVG (price), category
+FROM (superstore)
+WHERE (category)='Kitchen Supplies';
+--What category has the highest priced item? 
+Select MAX (price), category
+FROM (superstore)
+GROUP BY (category);
